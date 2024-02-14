@@ -119,5 +119,47 @@
 #         new_string += 'ing'
 # print(new_string)
 
+# string = "aBcDe .FzZ"
+# new_string = ''
+# for i in range(len(string)):
+#     if 65 <= ord(string[i]) <= 122:
+#         if string[i] == 'z':
+#             new_string += 'a'
+#         elif string[i] == 'Z':
+#             new_string += 'A'
+#         else:
+#             new_string += chr(ord(string[i]) + 1)
+#     else:
+#         new_string += string[i]
+# print(new_string)
 
+string = "strInG fOOR TRANssforMIng wITH upper and loower"
+word = ''
+string = string.lower()
+print(string)
+new_string = ''
 
+for i in range(len(string)):
+
+    if string[i] != " " and word == '':
+        word += string[i].upper()
+    elif string[i] != " " and i != len(string)-1:
+        word += string[i]
+    elif i == len(string)-1:
+        word += string[i]
+        new_string += word
+    elif i != len(string) and string[i + 1] == " ":
+        new_string += word + " "
+        word = ""
+    else:
+        new_string += word + " "
+        word = ''
+
+print(new_string)
+
+for i in range(len(new_string)):
+    if i < len(new_string) - 1:
+        if new_string[i] == new_string[i + 1]:
+            new_string = new_string.replace(new_string[i], '')
+
+print(new_string)
