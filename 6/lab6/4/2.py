@@ -8,5 +8,7 @@ for line in f:
     else:
         f1.write("\n")
 
+f1.close()
+
 
 

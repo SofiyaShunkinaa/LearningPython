@@ -12,3 +12,4 @@ for i in range(K):
 print(f)
 f1 = open("text.txt", 'w')
 f1.writelines(f)
+f1.close()
