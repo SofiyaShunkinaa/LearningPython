@@ -25,13 +25,16 @@ def checkbutton_changed():
 
 root = Tk()
 root.title("My first GUI")
-root.geometry("400x550+600+200")
+root.geometry("400x650+600+100")
 root.update_idletasks()
 
-label = Label(text="Hello World!")
+frame = ttk.Frame(borderwidth=1, relief=SOLID)
+
+label = ttk.Label(frame, text="Hello World!")
 label.pack()
-button = ttk.Button(text="Submit", command=click_button)
+button = ttk.Button(frame, text="Submit", command=click_button)
 button.pack()
+frame.pack(side=TOP, fill=X, padx=5, pady=10)
 
 test = StringVar(value="Radio")
 radio = ttk.Radiobutton(text="Radio", variable=test, value="Radio")
@@ -77,3 +80,9 @@ scroll.pack(side=RIGHT, fill=Y)
 
 root.protocol("WM_DELETE_WINDOW", finish)
 root.mainloop()
+
+canvas = Canvas(bg="white", width=250, height=250)
+canvas.pack(anchor=CENTER, expand=1)
+
+canvas.create_line(10,10,150,150, arrow='last', activefill="green", width=5)
+
