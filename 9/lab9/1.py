@@ -25,7 +25,7 @@ def checkbutton_changed():
 
 root = Tk()
 root.title("My first GUI")
-root.geometry("250x350+600+200")
+root.geometry("400x550+600+200")
 root.update_idletasks()
 
 label = Label(text="Hello World!")
@@ -48,6 +48,14 @@ text.pack()
 enabled = IntVar()
 check = ttk.Checkbutton(text="Turn on", variable=enabled, command=checkbutton_changed())
 check.pack(anchor=N, padx=5, pady=5)
+
+langs = ['Python', 'Java', 'C']
+lang_vars = Variable(value=langs)
+lang_list = Listbox(listvariable=lang_vars, height=5)
+lang_list.pack(side=RIGHT, padx=5)
+
+combo = ttk.Combobox(values=langs)
+combo.pack(fill=X)
 
 root.protocol("WM_DELETE_WINDOW", finish)
 root.mainloop()
