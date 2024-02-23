@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "name": "Sofiya",
+  "age": 19,
+  "isMarried": false,
+  "address": {
+    "street": "42 Prytytskiy St",
+    "city": "Minsk",
+    "zip": "7"
+  },
+  "phoneNumbers": [
+    {
+      "type": "mobile",
+      "number": "+375291079107"
+    }
+  ],
+  "notes": null
+}
