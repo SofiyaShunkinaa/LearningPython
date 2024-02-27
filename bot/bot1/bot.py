@@ -9,7 +9,7 @@ bot = TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start', 'register'])
 def start(message):
-    bot.send_message(message.chat.id, 'привет suchka 🥰')
+    bot.send_message(message.chat.id, 'привет lady 🥰')
     conn = sqlite3.connect('bot.db')
     cur = conn.cursor()
 
@@ -88,17 +88,17 @@ def on_click(message):
         bot.register_next_step_handler(message, on_click)
     elif message.text == "Зарегистриговаться":
         start(message)
-        # bot.register_next_step_handler(message, start)
     else:
-        bot.register_next_step_handler(message, on_click)
+        # bot.register_next_step_handler(message, on_click)
+        pass
 
 
 @bot.message_handler(commands=['help'])
 def help(message):
-    bot.send_message(message.chat.id, message)
+    bot.send_message(message.chat.id, "помощи не будет")
 
 
-@bot.message_handler(func=lambda message: "Статистика")
+@bot.message_handler(commands=['Я спать 😴'])
 def sleep(message):
     message_time = datetime.datetime.fromtimestamp(message.date, tz=pytz.utc)
     sender_timezone = 'Europe/Moscow'
