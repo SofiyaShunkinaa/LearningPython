@@ -1,6 +1,7 @@
 from telebot import TeleBot, types
 import sqlite3
 import datetime
+import pytz
 
 TOKEN = '6413161576:AAGcUNYAFO1BZu6Ja0pXz4VcB8yC-XUlJ-w'
 bot = TeleBot(TOKEN)
@@ -22,6 +23,11 @@ def start(message):
     print('MESSAGE 1 SENT')
     bot.register_next_step_handler(message, user_count)
     print('MESSAGE 2 SENT')
+
+
+@bot.message_handler(commands=['info'])
+def info(message):
+    bot.send_message(message.chat.id, message)
 
 
 def user_count(message):
@@ -89,14 +95,17 @@ def on_click(message):
 
 @bot.message_handler(commands=['help'])
 def help(message):
-    bot.send_message(message.chat.id, 'пошла нахуй!!!')
+    bot.send_message(message.chat.id, message)
 
 
 @bot.message_handler(func=lambda message: "Статистика")
 def sleep(message):
-    message_time = datetime.datetime.fromtimestamp(message.date)
-    message_hour = message_time.hour + 3
-    message_minute = message_time.minute
+    message_time = datetime.datetime.fromtimestamp(message.date, tz=pytz.utc)
+    sender_timezone = 'Europe/Moscow'
+    sender_timezone_obj = pytz.timezone(sender_timezone)
+    message_time_sender_timezone = message_time.astimezone(sender_timezone_obj)
+    message_hour = message_time_sender_timezone.hour
+    message_minute = message_time_sender_timezone.minute
     if message_minute >= 10:
         bot.send_message(message.chat.id, f'Ваше время: {message_hour}:{message_minute}')
     else:
