@@ -27,5 +27,6 @@ urlpatterns = [
     path('', views.index),
     path('user/', views.user),
     path('details/', views.details),
+    path('contact/', views.contact),
     path('about/', include(product_patterns)),
 ]
