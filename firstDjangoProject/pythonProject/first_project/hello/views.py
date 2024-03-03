@@ -1,8 +1,8 @@
-from django.http import HttpResponse, HttpResponsePermanentRedirect
-
+from django.http import HttpResponse, HttpResponsePermanentRedirect, JsonResponse
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("<h2>Главная</h2>", headers={'secret code': 'testing'})
+    return render(request, "index.html")
 
 
 def about(request):
@@ -10,7 +10,7 @@ def about(request):
 
 
 def contact(request):
-    return HttpResponse("<h2>Контакты</h2>")
+    return JsonResponse({"name":"Tom", "age": 20})
 
 
 def user(request):
