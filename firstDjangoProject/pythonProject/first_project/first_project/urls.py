@@ -19,7 +19,11 @@ from hello import views
 
 urlpatterns = [
     path('', views.index),
+    re_path(r'^about/contact/', views.contact),
     re_path(r'^about', views.about),
     path('contact', views.contact),
+    path("user", views.user),
+    path("user/<name>", views.user),
+    path("user/<name>/<int:age>", views.user)
 ]
 
