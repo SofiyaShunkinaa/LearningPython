@@ -12,6 +12,6 @@ def send_welcome(message):
 
 @bot.message_handler(commands=['help'])
 def send_welcome(message):
-    bot.send_message(message.chat.id, 'Hello')
+    bot.send_message(message.chat.id, 'Help')
 
 bot.polling(none_stop=True, interval=0)
