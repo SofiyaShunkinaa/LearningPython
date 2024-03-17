@@ -8,6 +8,7 @@ bot = TeleBot(TOKEN)
 
 conn = sqlite3.connect('fidel.db')
 cur = conn.cursor()
+cur.execute('CREATE TABLE IF NOT EXISTS services (id INTEGER PRIMARY KEY, name VARCHAR(255), date DATE)')
 cur.execute('CREATE TABLE IF NOT EXISTS bookings (id INTEGER PRIMARY KEY, name VARCHAR(50), phone VARCHAR(50), ')
 
 @bot.message_handler(commands=['start'])

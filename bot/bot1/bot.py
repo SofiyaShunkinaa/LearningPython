@@ -9,20 +9,8 @@ bot = TeleBot(TOKEN)
 
 @bot.message_handler(commands=['start', 'register'])
 def start(message):
-    bot.send_message(message.chat.id, 'привет lady 🥰')
-    conn = sqlite3.connect('bot.db')
-    cur = conn.cursor()
-
-    cur.execute(
-        'CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(50), count INTEGER)')
-    conn.commit()
-    cur.close()
-    conn.close()
-    print('CONNECTION CLOSED')
-    bot.send_message(message.chat.id, 'сейчас тебя зарегистрируем... Укажи твой текущий счёт')
-    print('MESSAGE 1 SENT')
-    bot.register_next_step_handler(message, user_count)
-    print('MESSAGE 2 SENT')
+    bot.send_message(message.chat.id, 'привет lady 🥰, просто вызови команду')
+    bot.register_next_step_handler(message, on_click)
 
 
 @bot.message_handler(commands=['info'])

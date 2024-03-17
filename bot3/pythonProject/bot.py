@@ -50,7 +50,7 @@ def weather(message):
 def horoscope(message):
     markup = types.InlineKeyboardMarkup()
     markup.add(types.InlineKeyboardButton('Гороскоп от mail.ru', callback_data='mail.ru'))
-    markup.add(types.InlineKeyboardButton('Гороскоп от КП', callback_data='rambler'))
+    markup.add(types.InlineKeyboardButton('Гороскоп от Рамблер', callback_data='rambler'))
     markup.add(types.InlineKeyboardButton('Гороскоп от РБК', callback_data='rbk'))
     bot.reply_to(message, "Выберите источник гороскопа для тельца на 2024", reply_markup=markup)
 
