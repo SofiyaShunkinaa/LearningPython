@@ -86,3 +86,5 @@ nod = NOD(354, 397)
 print()
 print(f"NOD of 354 and 397: {nod}")
 print()
+
+getSimpleNums(354, 397)
