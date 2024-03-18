@@ -59,6 +59,7 @@ while running:
             spawn_road()
 
     screen.fill(background_color)
+    my_car.move()
     draw_all()
 
     pygame.display.flip()
