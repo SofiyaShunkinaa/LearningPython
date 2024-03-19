@@ -23,3 +23,9 @@ class MyCar:
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
+
+    def crash(self, sound, traffic_cars):
+        for car in traffic_cars:
+            if car.rect.colliderect(car):
+                print('Game over')
+                sound.play()
