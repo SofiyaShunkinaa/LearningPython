@@ -6,6 +6,7 @@ class MyCar:
         self.image = image
         self.rect = self.image.get_rect()
         self.rect.center = position
+        self.game_status = 'game'
 
     def border(self):
         if self.rect.left < 0:
@@ -26,6 +27,7 @@ class MyCar:
 
     def crash(self, sound, traffic_cars):
         for car in traffic_cars:
-            if car.rect.colliderect(car):
+            if car.rect.colliderect(self.rect):
                 print('Game over')
                 sound.play()
+                self.game_status = 'game_over'

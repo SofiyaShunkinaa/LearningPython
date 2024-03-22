@@ -14,5 +14,9 @@ class TrafficCar(pygame.sprite.Sprite):
             self.kill()
 
     def update(self):
-        self.rect.y += self.speed
+        if self.speed in range(4,6):
+            self.rect.y -= self.speed
+            # self.position = 800
+        else:
+            self.rect.y += self.speed
         self.remove()
