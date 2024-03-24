@@ -46,12 +46,12 @@ for epoch in range(epochs):
     e_loss = 0
     e_correct = 0
 
-# test_image = random.choice(images)
+test_image = random.choice(images)
 
-test_image = plt.imread('custom3.jpg', format="jpeg")
-gray = lambda rgb : np.dot(rgb[..., :3], [0.229, 0.587, 0.114])
-test_image = 1 - (gray(test_image).astype("float32") / 255)
-test_image = np.reshape(test_image, (test_image.shape[0] * test_image.shape[1]))
+# test_image = plt.imread('custom1.jpg', format="jpeg")
+# gray = lambda rgb : np.dot(rgb[..., :3], [0.229, 0.587, 0.114])
+# test_image = 1 - (gray(test_image).astype("float32") / 255)
+# test_image = np.reshape(test_image, (test_image.shape[0] * test_image.shape[1]))
 
 image = np.reshape(test_image, (-1, 1))
 
