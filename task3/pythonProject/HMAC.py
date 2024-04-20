@@ -1,4 +1,3 @@
-import os
 import hmac
 import hashlib
 
@@ -9,5 +8,4 @@ class Hmac:
         self.message = message
 
     def generate_hmac(self):
-        return hmac.new(self.skey, self.message.encode(), hashlib.sha256).digest()
-
+        return hmac.new(self.skey, self.message.encode(), hashlib.sha3_256).digest().hex()
