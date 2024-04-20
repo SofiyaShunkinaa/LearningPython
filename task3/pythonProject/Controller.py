@@ -19,23 +19,30 @@ class Controller:
                 return False
         return True
 
-    def get_input(params):
+    @staticmethod
+    def checking(moves):
         def prompt_user():
-            return input("Введите параметры через пробел: ").split()
+            return input("Enter new moves: ").split()
 
-        if len(params) % 2 == 0 or len(params) < 3 or not Controller.is_identical(params):
-            if len(params) % 2 == 0:
+        if len(moves) % 2 == 0 or len(moves) < 3 or not Controller.is_identical(moves):
+            if len(moves) % 2 == 0:
                 Errors.err1()
-            elif len(params) < 3:
+            elif len(moves) < 3:
                 Errors.err3()
             else:
                 Errors.err2()
-            new_params = prompt_user()
-            return Controller.get_input(new_params)
+            new_moves = prompt_user()
+            return Controller.checking(new_moves)
         else:
-            menu = Menu(params)
-            menu.print_menu()
-            return Controller.get_menu_input()
+            return moves
+
+    def get_menu(params):
+        menu = Menu(params)
+        menu.print_menu()
+        return Controller.get_menu_input()
+
+    def get_moves(self, moves):
+        self.moves = moves
 
     @staticmethod
     def get_menu_input():
@@ -49,7 +56,7 @@ class Controller:
             print_rules()
             table = Table(self.moves)
             table.generate_table()
-        elif user_choice.isdigit() and int(user_choice) in range(1, len(self.moves)+1):
+        elif user_choice.isdigit() and int(user_choice) in range(1, len(self.moves) + 1):
             self.print_pc_move()
             self.print_win(user_move_value)
             self.print_pc_hmac_key()
@@ -58,7 +65,6 @@ class Controller:
         else:
             print("Incorrect input! Try again")
             self.select_choice(Controller.get_menu_input())
-
 
     def pc_user_moves(self):
         pc = PC(len(self.moves))
@@ -81,7 +87,7 @@ class Controller:
 
     def print_pc_hmac_key(self):
         print(f'HMAC key: {self.pc_key}')
-        print("="*100)
+        print("=" * 100)
 
     def print_win(self, user_move):
         result = get_win_index(self.moves, user_move, self.pc_move)
