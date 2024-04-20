@@ -2,14 +2,17 @@ class Errors:
     @staticmethod
     def err1():
         print("""Unexpected count of arguments!
-                 Tip: Enter odd number of arguments separated by space""")
+                 Tip: Enter odd number of arguments separated by space
+                 Example: 1st 2nd 3rd""")
 
     @staticmethod
     def err2():
         print("""Syntax error!
-                 Tip: Enter unique arguments""")
+                 Tip: Enter unique arguments
+                 Example: Rock Paper Scissors""")
 
     @staticmethod
     def err3():
         print("""Too little of arguments!
-                 Tip: Enter odd number of arguments (more than 3) separated by space""")
+                 Tip: Enter odd number of arguments (more than 3) separated by space
+                 Example: 1st 2nd 3rd""")
