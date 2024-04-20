@@ -1,5 +1,5 @@
 import tabulate
-from testing import get_win_index
+from Rules import get_win_index
 from colorama import Fore, Style
 
 
@@ -41,8 +41,3 @@ class Table:
 
     def format_table(self, table_data):
         return tabulate.tabulate(table_data, headers='firstrow', tablefmt='grid')
-
-
-# player_moves = ['Rock', 'Paper', '3rd move', '4th', '5th', '6th', '7th']
-# table = Table(player_moves)
-# table.generate_table()
