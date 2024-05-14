@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="section section-preview container">
+    <div class="section-title">
+        <h1 class="title-primary">Парикмахерское искусство в лучшем виде</h1>
+        <button class="btn btn-lg">Подробнее</button>
+    </div>
+    <img class="img-block" alt="primary-block" src="{% static "img/primary.png" %}">
+</div>
+
+<div class="section section-services container">
+    <div class="img-part"><img src="{% static "img/services.png" %}" alt="img"></div>
+    <div class="list-part">
+        <h2 class="title-secondary">Услуги</h2>
+
+        <ul class="services-list">
+            <li><a href="">мужcкие стрижки</a><div class="list-arrow"><img src="{% static "img/arr-1.png" %}" alt="arrow"></div></li>
+            <li><a href="">женские стрижки</a><div class="list-arrow"><img src="{% static "img/arr-2.png" %}" alt="arrow"></div></li>
+            <li><a href="">брови & ресницы</a><div class="list-arrow"><img src="{% static "img/arr-3.png" %}" alt="arrow"></div></li>
+            <li><a href="">окрашивания</a><div class="list-arrow"><img src="{% static "img/arr-4.png" %}" alt="arrow"></div></li>
+            <li><a href="">маникюр & педикюр</a><div class="list-arrow"><img src="{% static "img/arr-5.png" %}" alt="arrow"></div></li>
+        </ul>
+
+        <a class="btn btn-lg" href="">Подробнее</a>
+    </div>
+</div>
+
+<div class="section section-masters container">
+    <div class="subsection-title">
+        <h2 class="title-secondary">Мастера</h2>
+        <img alt="img" src="{% static "img/masters.png" %}">
+    </div>
+
+    <div class="masters-list">
+        {% for master in masters %}
+            <div class="master-card">
+                <img class="master-image" src="{% static 'img/' %}{{ master.image_path }}">
+                <span class="master-name">{{ master.name }}</span>
+            </div>
+        {% endfor %}<a href="" class="btn btn-lg btn-details">Подробнее</a>
+    </div>
+
+    
+</div>
+
+<div class="section section-form container">
+    <div class="title-block col-6">
+        <h2 class="title-secondary">Записаться</h2>
+        <img src="{% static "img/form.png" %}" alt="img">
+    </div>
+    <div class="form-block col-6"></div>
+</div>
+
+<img class="bg-1 bg-img" src="{% static "img/bg-1.png" %}" alt="img">
+<img class="bg-2 bg-img" src="{% static "img/bg-2.png" %}" alt="img">
+<img class="bg-3 bg-img" src="{% static "img/bg-3.png" %}" alt="img">
+<img class="gr-1 bg-img" src="{% static "img/gr-1.png" %}" alt="img">
+<img class="gr-2 bg-img" src="{% static "img/gr-2.png" %}" alt="img">
+<img class="gr-3 bg-img" src="{% static "img/gr-3.png" %}" alt="img">
+<img class="gr-4 bg-img" src="{% static "img/gr-4.png" %}" alt="img">
+<img class="gr-5 bg-img" src="{% static "img/gr-5.png" %}" alt="img">
+
+{% endblock content %}

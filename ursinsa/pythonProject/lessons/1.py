@@ -14,8 +14,7 @@ firstEntity = Entity(model='cube',
                      scale=2,
                      )
 
-secondEntity = Entity(parent=firstEntity,
-                      model='sphere',
+secondEntity = Entity(                      model='sphere',
                       position = (1,1,1))
 
 EditorCamera()

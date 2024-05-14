@@ -1,0 +1,74 @@
+  <!DOCTYPE html>
+  {% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIDEL - Главная</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container container-header">
+            <div class="logo">
+                <div class="logo-circle"></div>
+                <div class="logo-text">FIDEL</div>
+            </div>
+            <ul>
+                <li><a href="">Услуги</a></li>
+                <li><a href="">Мастерa</a></li>
+                <li><a href="">Блог</a></li>
+                <li><a href="">Контакты</a></li>
+                <li><a href="">Личный кабинет</a></li>
+                <li><a class="btn btn-lg">Записаться</a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="container">
+        <div class="row">
+            <div class="top-border row">
+                <div class="dots col-3">
+                    <div class="dot-1 dot"></div>
+                    <div class="dot-2 dot"></div>
+                    <div class="dot-1 dot"></div>
+                </div>
+                <div class="line col-9"></div>
+            </div>
+            <div class="col-4">
+                <ul class="footer-list-left">
+                    <li><a>Услуги</a></li>
+                    <li><a>Мастера</a></li>
+                    <li><a>Блог</a></li>
+                    <li><a>Контакты</a></li>
+                    <li><a>Личный кабинет</a></li>
+                </ul>
+            </div>
+            <div class="col-4 logo-footer">
+                <div class="logo">
+                    <div class="logo-circle"></div>
+                    <div class="logo-text">FIDEL</div>
+                </div>
+                <div>
+                    <p>&copy; 2024 София Шунькина 9гр. 2к. ФИТ</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <ul class="footer-list-right">
+                    <li><a>Помощь</a></li>
+                    <li><a>Ответы и вопросы</a></li>
+                    <li><a>+375 (17) 171-71-71</a></li>
+                    <li><a>info@fidel.com</a></li>
+                    <li><a>Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</body>
+</html>
