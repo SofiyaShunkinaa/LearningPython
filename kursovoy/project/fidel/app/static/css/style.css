@@ -422,3 +422,58 @@ span.current{
     font-size: 48px;
     margin-bottom: 87px;
 }
+
+.section-form{
+    display: flex;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+form p{
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form select{
+    width: 528px;
+    font-size: 24px;
+    height: 56px;
+    border-radius: 25px;
+    border: none;
+    background: rgba(255, 255, 255, 0.26);
+    color: white;
+    font-weight: 600;
+    padding: 0 20px;
+}
+
+option{
+    color: #070707;
+}
+
+.modal-header{
+    justify-content: space-between;
+}
+
+.btn-secondary{
+    border: 2px solid #979797;
+    background: white;
+    color: #979797 !important;
+}
+
+.btn-secondary:hover{
+    background: rgb(218, 218, 218);
+}
+
+.btn-secondary:active{
+    background: rgb(182, 182, 182);
+}
+
+.close{
+    border-radius: 20px;
+    width: 27px;
+    height: 27px;
+}
