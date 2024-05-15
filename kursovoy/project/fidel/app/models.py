@@ -30,3 +30,24 @@ class Master(models.Model):
             return f"{self.name[:-2]}ию"
         else:
             return f"{self.name}у"    
+        
+        
+class Service(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return self.name 
+
+
+class Appointment(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    master = models.ForeignKey(Master, on_delete=models.CASCADE)
+    date = models.DateField()
+    phone_number = models.CharField(max_length=15)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} - {self.service} - {self.master} - {self.date}"           
