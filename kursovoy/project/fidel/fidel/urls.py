@@ -17,8 +17,10 @@ Including another URLconf
 from app import views
 from django.urls import path
 
+
 urlpatterns = [
     path("", views.index),
-    path("masters/", views.masters),
+    path("masters/", views.masters, name="masters"),
     path("contacts/", views.contacts),
+    path("404/", views.error)
 ]
