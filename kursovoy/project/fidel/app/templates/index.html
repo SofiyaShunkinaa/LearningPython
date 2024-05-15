@@ -51,8 +51,36 @@
         <h2 class="title-secondary">Записаться</h2>
         <img src="{% static "img/form.png" %}" alt="img">
     </div>
-    <div class="form-block col-6"></div>
+    <div class="form-block col-6">
+        <form method="post" id="appointment-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="button" class="btn btn-primary" id="submit-btn">Отправить</button>
+        </form>
+        
+        <div class="modal fade" id="confirmation-modal" tabindex="-1" role="dialog" aria-labelledby="confirmation-modal-label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmation-modal-label">Подтверждение</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Вы уверены, что хотите отправить форму?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                        <button type="button" class="btn btn-primary" id="confirm-btn">Подтвердить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 
 <img class="bg-1 bg-img" src="{% static "img/bg-1.png" %}" alt="img">
 <img class="bg-2 bg-img" src="{% static "img/bg-2.png" %}" alt="img">
