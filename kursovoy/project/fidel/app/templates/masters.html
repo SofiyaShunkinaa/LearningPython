@@ -1,5 +1,60 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Masters</h1>
+{% load static %}
+
+<div class="section container">
+    <div class="page-title">
+        <h1 class="title-primary">Наши мастера</h1>
+        <p class="secondary-subtext">Коллектив cтудии Fidel - это команда НАСТОЯЩИХ ПРОФЕССИОНАЛОВ СВОЕГО ДЕЛА!</p>
+    </div>
+    <div class="sort-block">
+        <span>Сортировать по: </span>
+        <a href="?sort=asc" class="{% if sort_order == 'asc' %}active-link{% endif %} sort-link">возрастанию стажа</a> | 
+        <a href="?sort=desc" class="{% if sort_order == 'desc' %}active-link{% endif %} sort-link">убыванию стажа</a>
+    </div>
+
+    <div class="masters-list">
+        {% for master in masters %}
+            <div class="master-block col-12">
+                <div class="master-card">
+                    <img class="master-image" src="{% static 'img/' %}{{ master.image_path }}">
+                    <span class="master-name">{{ master.name }}</span>
+                    
+                </div>
+                <div class="sideblock">
+                    <div class="services-list">
+                        <p>Стаж работы: {{ master.get_experience_display }}</p>
+                        {% for service in master.get_services_list %}
+                            <p>{{ service }}</p>
+                        {% endfor %}
+                    </div>
+                    <a href="" class="btn btn-lg">Записаться к {{ master.get_name_with_ending }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if masters.has_previous %}
+                <a href="?page=1&sort={{ sort_order }}"><<</a>
+                <a href="?page={{ masters.previous_page_number }}&sort={{ sort_order }}" class="side-btn"><</a>
+            {% endif %}
+
+            <span class="current">
+                {{ masters.number }} / {{ masters.paginator.num_pages }}
+            </span>
+
+            {% if masters.has_next %}
+                <a href="?page={{ masters.next_page_number }}&sort={{ sort_order }}" class="side-btn">></a>
+                <a href="?page={{ masters.paginator.num_pages }}&sort={{ sort_order }}">>></a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+
+<img class="bg-5 bg-img" src="{% static "img/bg-5.png" %}" alt="img">
+<img class="bg-6 bg-img" src="{% static "img/bg-6.png" %}" alt="img">
+<img class="gr-7 bg-img" src="{% static "img/gr-7.png" %}" alt="img">
 
 {% endblock content %}
