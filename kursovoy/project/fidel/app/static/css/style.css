@@ -43,8 +43,11 @@ header ul{
 }
 
 .section-preview{
-    margin-top: 160px;
     margin-bottom:540px;
+}
+
+header{
+    margin-bottom: 160px;
 }
 
 .btn{
@@ -165,7 +168,7 @@ h1.title-primary{
 .masters-list{
     display: flex;
     flex-wrap: wrap;
-    gap: 100px;
+    gap: 250px;
 }
 
 .master-name{
@@ -186,7 +189,7 @@ h1.title-primary{
 }
 
 .gr-2{
-    width: 100vw;
+    width: 98vw;
     top: 1950px;
 }
 
@@ -207,7 +210,7 @@ h1.title-primary{
 }
 
 .gr-3{
-    width: 100vw;
+    width: 98vw;
     top: 3450px;
 }
 
@@ -258,5 +261,164 @@ footer.container{
 }
 
 .gr-5{
+    width: 98vw;
+}
+
+.contacts-map iframe{
+    width: 100%;
+    border-radius: 70px;
+}
+
+.contact-card{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 50px;
+    margin-bottom: 150px;
+}
+
+.section-contacts h2{
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 85px;
+}
+
+.contact-title h3{
+    font-weight: 600;
+}
+
+.contact-desc p{
+    font-size: 24px;
+    margin: 0;
+}
+
+.bg-4{
+    top: 0;
+}
+
+.gr-6{
+    top: 250px;
+    right: 20px;
+}
+
+.master-block{
+    display: flex;
+}
+
+.services-list{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: auto;
+    height: 400px;
+    row-gap: 5px;
+}
+
+.services-list p{
+    margin: 0;
+}
+
+.page-title{
+    width: 1030px;
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+
+.page-title p, .page-title h1{
+    text-align: center;
+}
+
+.page-title h1{
+    font-size: 64px;
+    margin-bottom: 24px;
+}
+
+.page-title p{
+    font-size: 32px;
+}
+
+a.active-link{
+    font-weight: 600;
+    color: #DF0092 !important;
+}
+
+.sort-block{
+    margin-bottom: 50px;
+    font-size: 24px;
+}
+
+.sort-link{
+    font-size: 22px;
+}
+
+.pagination{
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 80px;
+    font-size: 28px;
+}
+
+.pagination a{
+    color: rgb(175, 175, 175) !important;
+}
+
+span.current{
+    border-radius: 20px;
+    border: 2px solid #DF0092;
+    background-color: white;
+    padding: 6px 12px;
+    margin: 0 10px;
+}
+
+.bg-5{
+    top: 0;
+    left: 0;
+}
+
+.bg-6{
+    top: 1900px;
     width: 100vw;
+    right: 0;
+}
+
+.pagination a.side-btn{
+    color: #070707 !important;
+}
+
+.gr-7{
+    top: 150px;
+    right: 0;
+}
+
+.section-masters .masters-list{
+    gap: 100px;
+}
+
+.content-404{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.error-img img{
+    width: 100%;
+}
+
+.error-textblock{
+    padding-left: 55px;
+}
+
+.error-code{
+    font-size: 200px;
+    margin-bottom: 0;
+}
+
+.error-message{
+    font-size: 48px;
+    margin-bottom: 87px;
 }
