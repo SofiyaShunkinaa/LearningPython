@@ -477,3 +477,149 @@ option{
     width: 27px;
     height: 27px;
 }
+
+@media screen and (max-width: 1440px){
+    .bg-img{
+        width: 100vw;
+    }
+
+    .section-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-masters .masters-list {
+        justify-content: center;
+    }
+
+    .btn-details{
+        width: 50%;
+    }
+
+    form input, form select{
+        background: rgb(0 165 251 / 26%);
+    }
+
+    .master-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .services-list{
+        height: auto;
+    }
+
+    .bg-6{
+        display: none;
+    }
+
+    .page-title{
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    header li {
+        display: none;
+    }
+    
+    header li:last-child {
+        display: block;
+    }
+
+    footer .col-4{
+        display: none;
+    }
+
+    footer .col-4.logo-footer{
+        display: block;
+    }
+
+    .section-services{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bg-2 {
+        top: 1300px;
+    }
+
+    .img-block{
+        width: 1000px;
+    }
+
+    .contact-card {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contacts {
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 50px;
+        margin-bottom: 150px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section-services{
+        flex-direction: column;
+    }
+
+    .bg-img{
+        width: 100vw;
+    }
+
+    .img-block {
+        position: absolute;
+        top: 450px;
+        right: 0;
+        width: 600px;
+    }
+
+    .bg-2 {
+        top: 1100px;
+    }
+
+    .section-services img{
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+    }
+
+    .section-form img{
+        width: 100%;
+    }
+
+    form input, form select{
+        width: auto;
+    }
+
+    .section-title{
+        width: auto;
+    }
+
+    .error-textblock.col-6{
+        padding: 0;
+    }
+
+    .content-404{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .bg-2 {
+        top: 1300px;
+    }
+}
