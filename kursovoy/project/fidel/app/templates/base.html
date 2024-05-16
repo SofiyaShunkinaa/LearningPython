@@ -89,6 +89,12 @@
             document.getElementById('id_service').selectedIndex = 0;
             document.getElementById('id_master').selectedIndex = 0;
         });
+
+        $(document).ready(function(){
+        $('#exit-btn').on('click', function(){
+            $('#confirmation-modal').modal('hide');
+        });
+    });
     </script>
     </body>
 </html>
