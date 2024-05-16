@@ -206,7 +206,7 @@ h1.title-primary{
 
 .bg-3{
     right: 0;
-    top: 3500px;
+    top: 3400px;
 }
 
 .gr-3{
@@ -215,7 +215,7 @@ h1.title-primary{
 }
 
 footer.container{
-    margin-top: 670px;
+    margin-top: 400px;
 }
 
 .dot{
@@ -262,6 +262,7 @@ footer.container{
 
 .gr-5{
     width: 98vw;
+    top: 4550px;
 }
 
 .contacts-map iframe{
@@ -382,7 +383,7 @@ span.current{
 }
 
 .bg-6{
-    top: 1900px;
+    top: 1750px;
     width: 100vw;
     right: 0;
 }
@@ -425,6 +426,7 @@ span.current{
 
 .section-form{
     display: flex;
+    justify-content: space-around;
 }
 
 form{
@@ -622,4 +624,13 @@ option{
     .bg-2 {
         top: 1300px;
     }
+
+    .list-part{
+        display: flex;
+        flex-direction: column;
+        color: black;
+        align-items: center;
+    }
+
+
 }
