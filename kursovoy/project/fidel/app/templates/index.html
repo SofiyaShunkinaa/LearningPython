@@ -10,7 +10,7 @@
     <img class="img-block" alt="primary-block" src="{% static "img/primary.png" %}">
 </div>
 
-<div class="section section-services container">
+<div class="section section-services container" id="services-block">
     <div class="img-part"><img src="{% static "img/services.png" %}" alt="img"></div>
     <div class="list-part">
         <h2 class="title-secondary">Услуги</h2>
@@ -23,7 +23,7 @@
             <li><a href="">маникюр & педикюр</a><div class="list-arrow"><img src="{% static "img/arr-5.png" %}" alt="arrow"></div></li>
         </ul>
 
-        <a class="btn btn-lg" href="">Подробнее</a>
+        <a class="btn btn-lg" href="/masters/">Подробнее</a>
     </div>
 </div>
 
@@ -40,18 +40,18 @@
                 <span class="master-name">{{ master.name }}</span>
             </div>
         {% endfor %}
-        <a href="" class="btn btn-lg btn-details">Подробнее</a>
+        <a href="/masters/" class="btn btn-lg btn-details">Подробнее</a>
     </div>
 
     
 </div>
 
-<div class="section section-form container">
-    <div class="title-block col-6">
+<div class="section section-form container" id="form-block">
+    <div class="title-block col-6-lg col-12-sm">
         <h2 class="title-secondary">Записаться</h2>
         <img src="{% static "img/form.png" %}" alt="img">
     </div>
-    <div class="form-block col-6">
+    <div class="form-block col-6-lg col-12-sm">
         <form method="post" id="appointment-form">
             {% csrf_token %}
             {{ form.as_p }}
